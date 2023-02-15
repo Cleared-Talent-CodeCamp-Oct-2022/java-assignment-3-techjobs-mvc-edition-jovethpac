@@ -11,8 +11,38 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
+<!--we just determined that the ListController is passing a list of jobs called "jobs" into this view. So our task
+is to take this jobs list and using Thymeleaf to render out any jobs on this jobs list to this page-->
+<!--    where do put th each, td and tr tags etc-->
+    <table th:each="job : ${jobs}"} class="job-listing">
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.id}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.name}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.employer}"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.location}"></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.positionType}"></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.coreCompetency}"></td>
+        </tr>
 
+    </table>
 </div>
+
 
 </body>
 </html>
