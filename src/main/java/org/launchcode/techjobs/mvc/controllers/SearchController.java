@@ -33,7 +33,7 @@ public class SearchController {
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
         ArrayList<Job> jobs;
 
-        if (searchType.equals("all") || searchType.equals("")) { //if all is selected
+        if (searchType.equals("all") || searchTerm.toLowerCase().equals("")) { //if all is selected
             jobs = JobData.findAll();//print all
         } else {//otherwise if it's besides all, send this and pass in their choices, pass in parameters, change column, value??
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
